@@ -1,12 +1,12 @@
 
 (function() {
-	var CategoriesController = function($scope, categoriesFactory) {
+	var CategoriesController = function($scope, categoriesService) {
 		$scope.sortBy = 'user';
 		$scope.reverse = false;
 		$scope.categories = [];
 
 		function init() {
-			$scope.categories = categoriesFactory.getCategories();
+			$scope.categories = categoriesService.getCategories();
 		}	
 
 		init();
@@ -18,7 +18,7 @@
 		console.log('CategoriesController');
 	};
 
-	CategoriesController.$inject = ['$scope', 'categoriesFactory'];
+	CategoriesController.$inject = ['$scope', 'categoriesService'];
 
 	angular.module('adminApp')
 	.controller('CategoriesController', CategoriesController);
