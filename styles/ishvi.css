@@ -1,0 +1,95 @@
+.navbar {
+	background: #367fa9;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+.add-category-box {
+	margin: 70px auto;
+	width: 70%;
+}
+
+.add-category-box > div {
+	padding-right: 0;
+	padding-left: 0;
+	display: inline-block;
+}
+
+.category-image {
+	margin-top: 5px;
+	width: 100%;
+	height: 100%;
+}
+
+.col-md-offset-1{
+	vertical-align: middle;
+	text-align: center;
+	width: 150px;
+	height: 150px;
+}
+
+/* -------------------------- DROPDOWN MENU ---------------------- */
+
+.dropdown .dropdown-menu {
+	min-width: 1px;
+	max-width:100px; 
+	width: 100px;
+}
+
+.dropdown .dropdown-menu a .fa,
+.dropdown .dropdown-menu a span {
+	color: #555555;
+}
+
+.dropdown .dropdown-menu li a:hover {
+	color: #000;
+}
+
+.dropdown .dropdown-menu li:first-child {
+	border-bottom: 1px solid #dbdbdb;;
+}
+
+/* -------------------------- OVERLAY ---------------------- */
+
+#overlay {
+  background:rgba(0,0,0,0.7);
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  display:none;
+  text-align:center;
+}
+
+#overlay img {
+ 	margin: 150px auto;
+}
+
+/* -------------------------- PRODUCTS ---------------------- */
+
+.content-element {
+	display: block;
+}
+
+.elements-header {
+	height: 20px;
+	width: 95%;
+	background: green;
+}
+
+.elements-content {
+	width: 95%;
+	background: red;
+}
+
+.elements-box {
+	width: 95%;
+	position: relative;
+	background: yellow;
+}
+
+

@@ -1,0 +1,55 @@
+
+      <!-- Right side column. Contains the navbar and content of the page -->
+          <h1>
+            Categories
+          </h1>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- Small boxes (Stat box) -->
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title"></h3>
+                  <div class="box-tools">
+                    Filter: <input type="text" ng-model="categoryFilter.user" />
+                    <div class="pull-right">
+
+                      <div class="btn btn-sm btn-default">
+                        <a href="subcategory.html">
+                          <i class="fa fa-plus"></i>
+                          <span>&nbsp;Add more</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                      <tr>
+                        <th ng-click="doSort('id')">ID</th>
+                        <th ng-click="doSort('user')">User</th>
+                        <th ng-click="doSort('date')">Date</th>
+                        <th ng-click="doSort('status')">Status</th>
+                        <th ng-click="doSort('reason')">Reason</th>
+                        <th></th>
+                      </tr>
+                      <tr ng-repeat="category in categories | filter:categoryFilter | orderBy:sortBy:reverse" ng-cloak>
+                        <td> {{ category.id }} </td>
+                        <td> {{ category.user }} </td>
+                        <td> {{ category.date | date:'longDate' }} </td>
+                        <td> {{ category.status }} </td>
+                        <td> {{ category.reason }} </td>
+                        <td><a href="..">Edit</a></td>
+                      </tr>
+                    </table>
+                  </div><!-- /.box-body -->
+                </div><!-- /.box -->
+              </div>
+            </div>
+          </div>
+          <!-- Main row -->
+          <!-- /.row (main row) -->
+
+     
