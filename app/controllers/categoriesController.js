@@ -6,7 +6,15 @@
 		$scope.categories = [];
 
 		function init() {
-			$scope.categories = categoriesFactory.getCategories();
+			categoriesFactory.getCategories()
+				.success(function(categories) {
+					console.log('success called');
+					$scope.categories = categories;
+				})
+				.error(function(data, status, headers, config) {
+					console.log('error');
+					$log.log(data.error);
+				});
 		}	
 
 		init();
