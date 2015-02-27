@@ -1,10 +1,15 @@
 
 (function() {
-	var CategoriesController = function($scope) {
+	var CategoriesController = function($scope, categoriesFactory) {
 		$scope.sortBy = 'user';
 		$scope.reverse = false;
+		$scope.categories = [];
 
-		$scope.categories= [{id:'123', user:'shashi', date:'2014-07-12', status: 'approved', reason: 'lkscla'},{id:'456', user:'aseem', date:'2013-01-02', status: 'failed', reason: 'bjhcjsbcj'},{id:'789', user:'sajal', date:'2016-03-01', status: 'pending', reason: 'kjahsijkanm'},{id:'143', user:'maximus', date:'2002-01-08', status: 'corrupted', reason: 'dskjcbka,nm'},{id:'233', user:'munshi', date:'2004-03-10', status: 'chomu', reason: 'lkajsiodlksjh'}];
+		function init() {
+			$scope.categories = categoriesFactory.getCategories();
+		}	
+
+		init();
 
 		$scope.doSort = function(propName) {
 			$scope.sortBy = propName;
@@ -13,7 +18,7 @@
 		console.log('CategoriesController');
 	};
 
-	CategoriesController.$inject = ['$scope'];
+	CategoriesController.$inject = ['$scope', 'categoriesFactory'];
 
 	angular.module('adminApp')
 	.controller('CategoriesController', CategoriesController);
