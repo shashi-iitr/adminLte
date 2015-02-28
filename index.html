@@ -49,9 +49,9 @@
                 <ul class="nav navbar-nav">                        
                   <!-- User Account: style can be found in dropdown.less -->
                   <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">
                       <i class="glyphicon glyphicon-user"></i>
-                      <span>Jane Doe <i class="caret"></i></span>
+                      <span ng-cloak> {{ user.name }} <i class="caret"></i></span>
                     </a>
                     <ul class="dropdown-menu">
 
@@ -61,7 +61,7 @@
                           <a href="#" class="btn btn-default btn-flat">Profile</a>
                         </div>
                         <div class="pull-right">
-                          <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                          <a href="login.html" class="btn btn-default btn-flat">Sign out</a>
                         </div>
                       </li>
                     </ul>
@@ -129,6 +129,7 @@
           <script src="app/controllers/categoriesController.js"></script>
           <script src="app/controllers/editCategoryController.js"></script>
           <script src="app/services/categoriesFactory.js"></script>
+          <!-- // <script src="app/services/dashboardFactory.js"></script> -->
           <script src="data/categories.json"></script>
 
           <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
