@@ -11,6 +11,10 @@
 				controller: 'CategoriesController',
 				templateUrl: 'app/views/categories.html'
 			})
+			.when('/editCategory/:categoryId', {
+				controller: 'EditCategoryController',
+				templateUrl: 'app/views/editCategory.html'
+			})	
 			.otherwise( {redirectTo: '/'});
 	});
 }());

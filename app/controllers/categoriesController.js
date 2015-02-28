@@ -1,20 +1,19 @@
 
 (function() {
 	var CategoriesController = function($scope, categoriesFactory) {
-		$scope.sortBy = 'user';
+		$scope.sortBy = 'name';
 		$scope.reverse = false;
 		$scope.categories = [];
 
 		function init() {
-			categoriesFactory.getCategories()
-				.success(function(categories) {
-					console.log('success called');
-					$scope.categories = categories;
-				})
-				.error(function(data, status, headers, config) {
-					console.log('error');
-					$log.log(data.error);
-				});
+			$scope.categories = categoriesFactory.getCategories()
+		// 		.success(function(categories) {
+		// 			$scope.categories = categories;
+		// 		})
+		// 		.error(function(data, status, headers, config) {
+		// 			console.log('error');
+		// 		});
+		// }
 		}	
 
 		init();
@@ -23,7 +22,6 @@
 			$scope.sortBy = propName;
 			$scope.reverse = !$scope.reverse;
 		};
-		console.log('CategoriesController');
 	};
 
 	CategoriesController.$inject = ['$scope', 'categoriesFactory'];

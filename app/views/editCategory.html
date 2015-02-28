@@ -1,0 +1,40 @@
+
+<h1>
+  Add/Edit Categories
+</h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <!-- Small boxes (Stat box) -->
+  <div class="row add-category-box">
+    <div class="col-md-6">
+      <div class="box box-primary" style="border-top-color:#00a65a;">
+        <div class="box-header" style="background-color:#00a65a !important;">
+          <h3 class="box-title" style="color:#fff;">Please add category</h3>
+        </div><!-- /.box-header -->
+        <!-- form start -->
+        <form role="form">
+          <div class="box-body">
+            <div class="form-group">
+              <label for="exampleInputName">Name</label>
+              <input type="text" class="form-control" id="exampleInputName" ng-model="category.name" placeholder="Name" /> 
+            </div>
+            <div class="form-group">
+              <label for="exampleInputImage">Image</label>
+              <input type="text" class="form-control" id="exampleInputImage" ng-model="category.link" placeholder="Paste image link" />
+            </div>
+          </div>
+          <div class="box-footer">
+            <a ng-href="#/category" class="btn btn-primary">Submit</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-offset-1 col-md-3">
+      <a ng-href="{{category-link}}" class="category-image-link">
+        <img ng-src="{{category.link}}" class="category-image"></a>
+      </div>       
+  </div>
+</section>
+
