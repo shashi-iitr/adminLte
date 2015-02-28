@@ -35,7 +35,19 @@
 
 		init();
 
-		
+		$scope.showImage = function () {
+			$('#overlay-image').show();
+		}
+
+		$scope.hideOverlay = function () {
+			$('#overlay-image').hide();
+		}
+
+		$scope.submitCategory = function () {
+			$('#overlay-loader').show();
+			console.log('submit categories called');
+			categoriesFactory.updateCategories($scope.categories);
+		};
 
 	};
 

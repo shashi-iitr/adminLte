@@ -26,15 +26,23 @@
             </div>
           </div>
           <div class="box-footer">
-            <a ng-href="#/category" class="btn btn-primary">Submit</a>
+            <a ng-click="submitCategory()" class="btn btn-primary">Submit</a>
           </div>
         </form>
       </div>
     </div>
     <div class="col-md-offset-1 col-md-3">
-      <a ng-href="{{category-link}}" class="category-image-link">
+      <a ng-href="" ng-click="showImage()" class="category-image-link">
         <img ng-src="{{category.link}}" class="category-image"></a>
       </div>       
   </div>
 </section>
+
+<div id="overlay-loader">
+  <img src="img/ajax-loader1.gif" id="loader" />
+</div>
+
+<div id="overlay-image" ng-click="hideOverlay()">
+  <img ng-src="{{category.link}}" />
+</div>
 

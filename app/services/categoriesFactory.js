@@ -14,8 +14,26 @@
 			// return $http.get('data/categories.json');
 		};
 
+		//post
+		factory.updateCategories = function (categories) {
+			console.log('updateCategories called');
+			// $http({
+	  //     		method: 'POST',
+	  //     		url: 'www.posturl.com',
+	  //     		data: $scope.categories,
+	  //     		headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+	  //   	}).
+	  //   	success(function(response) {
+	  //       	console.log(response.data);
+	  //   	}).
+	  //   	error(function(response) {
+	  //       	console.log('Request failed');
+	  //   	});
+		};
+
 		return factory;
 	};
+
 
 	categoryFactory.$inject = ['$http'];
 
