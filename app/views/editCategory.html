@@ -1,6 +1,6 @@
 
 <h1>
-  Add/Edit Categories
+  &nbsp;&nbsp;Add/Edit Categories
 </h1>
 </section>
 
@@ -16,25 +16,40 @@
         <!-- form start -->
         <form role="form">
           <div class="box-body">
+
             <div class="form-group">
               <label for="exampleInputName">Name</label>
-              <input type="text" class="form-control" id="exampleInputName" ng-model="category.name" placeholder="Name" /> 
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-pencil"></i>
+                </div>
+                <input type="text" class="form-control" id="exampleInputName" ng-model="category.name" placeholder="Name" /> 
+              </div><!-- /.input group -->
             </div>
+
+
             <div class="form-group">
               <label for="exampleInputImage">Image</label>
-              <input type="text" class="form-control" id="exampleInputImage" ng-model="category.link" placeholder="Paste image link" />
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-image"></i>
+                </div>
+                <input type="text" class="form-control" id="exampleInputImage" ng-model="category.link" placeholder="Paste image link" />
+              </div><!-- /.input group -->
             </div>
+
           </div>
           <div class="box-footer">
-            <a ng-click="submitCategory()" class="btn btn-primary">Submit</a>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="col-md-offset-1 col-md-3">
-      <a ng-href="" ng-click="showImage()" class="category-image-link">
-        <img ng-src="{{category.link}}" class="category-image"></a>
-      </div>       
+           <!-- ng-click="submitCategory()" this will go bellow in place of href -->
+           <a ng-href="#/category"  class="btn btn-primary">Submit</a> 
+         </div>
+       </form>
+     </div>
+   </div>
+   <div class="col-md-offset-1 col-md-3 paste-image">
+    <a ng-href="" ng-click="showImage()" class="category-image-link">
+      <img ng-src="{{category.link}}" class="category-image"></a>
+    </div>       
   </div>
 </section>
 

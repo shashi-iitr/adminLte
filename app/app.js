@@ -1,8 +1,9 @@
 (function () {
-	var app = angular.module('adminApp', ['ngRoute']);
+	var app = angular.module('adminApp', ['ngRoute', 'ngAnimate']);
 
 
 	app.config(function($routeProvider) {
+		console.log('routeProvider');
 		$routeProvider
 			.when('/', {
 				controller: 'DashboardController',
@@ -19,8 +20,9 @@
 			.otherwise( {redirectTo: '/'});
 	})
 	.run(function($rootScope, $http) {
+		console.log('run');
 		$http.get('../data/user.json').success(function (user) {
-			console.log('success');
+			console.log('run success');
 			console.log(user);
 			$rootScope.user = user;
     	});

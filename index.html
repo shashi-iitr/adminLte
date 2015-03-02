@@ -21,6 +21,7 @@
   <!-- Theme style -->
   <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
   <link href="styles/ishvi.css" rel="stylesheet" type="text/css" />
+  <link href="styles/animation.css" rel="stylesheet" type="text/css" />
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -116,14 +117,15 @@
 
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                  <div ng-view></div>
+                  <div ng-view class="slide-right"></div>
                 </section>
               </div>
             </aside>
           </div>
 
           <script src="scripts/angular.js"></script>
-          <script src="scripts/angular-route.js"></script>                
+          <script src="scripts/angular-route.js"></script>
+          <script src="scripts/angular-animate.js"></script>             
           <script src="app/app.js"></script>
           <script src="app/controllers/dashboardController.js"></script>
           <script src="app/controllers/categoriesController.js"></script>

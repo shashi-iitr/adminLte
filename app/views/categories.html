@@ -1,7 +1,7 @@
 
 <!-- Right side column. Contains the navbar and content of the page -->
 <h1>
-  Categories
+  &nbsp;&nbsp;Categories
 </h1>
 </section>
 
@@ -14,11 +14,11 @@
         <div class="box-header">
           <h3 class="box-title"></h3>
           <div class="box-tools">
-            Filter: <input type="text" ng-model="categoryFilter.name" />
+            Filter: <input type="text" class="filter-category" ng-model="categoryFilter.name" />
             <div class="pull-right">
 
-              <div class="btn btn-sm btn-default">
-                <a href="subcategory.html">
+              <div class="btn btn-sm btn-default edit-category">
+                <a href="#/editCategory/{{ -1 }}">
                   <i class="fa fa-plus"></i>
                   <span>&nbsp;Add more</span>
                 </a>
@@ -33,7 +33,7 @@
                 <th ng-click="doSort('link')">Link</th>
                 <th></th>
               </tr>
-              <tr ng-repeat="category in categories | filter:categoryFilter | orderBy:sortBy:reverse" ng-cloak>
+              <tr ng-repeat="category in categories | filter:categoryFilter | orderBy:sortBy:reverse" class="repeat-animation" ng-cloak>
                 <td> {{ category.id }} </td>
                 <td> {{ category.name }} </td>
                 <td> {{ category.link }} </td>

@@ -31,6 +31,18 @@ body {
 	height: 150px;
 }
 
+.edit-category {
+	margin-bottom: 5px;
+}
+
+.filter-category {
+	margin-top: 2px;
+}
+
+.paste-image {
+	margin-top: -5px;
+}
+
 /* -------------------------- DROPDOWN MENU ---------------------- */
 
 .dropdown .dropdown-menu {
@@ -64,6 +76,7 @@ body {
   left:0;
   display:none;
   text-align:center;
+  z-index:1000;
 }
 
 #overlay-image img,
@@ -75,7 +88,6 @@ body {
 	max-height: 300px;
 	max-width: 300px;
 }
-
 
 /* -------------------------- PRODUCTS ---------------------- */
 
