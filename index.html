@@ -30,7 +30,7 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
           <![endif]-->
         </head>
-        <body class="skin-blue">
+        <body class="skin-blue" ng-controller="IndexController">
           <!-- header logo: style can be found in header.less -->
           <header class="header">
             <a href="#" class="logo">
@@ -78,36 +78,13 @@
               <section class="sidebar">
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
-                  <li class="active">
-                    <a href="#">
-                      <i class="fa fa-dashboard"></i>
-                      <span>&nbsp;Dashboard</span>
+                  <li ng-repeat="index in indexes" ng-class="{'active':isCurrentIndex(index)}" ng-cloak>
+                    <a href="{{index.link}}" ng-click="setCurrentIndex(index)">
+                      <i class="{{index.className}}"></i>
+                      <span>&nbsp;{{index.name}}</span>
                     </a>
                   </li>
-                  <li>
-                    <a href="#/category">
-                      <i class="fa fa-th"></i>
-                      <span>&nbsp;Categories</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="product.html">
-                      <i class="fa fa-wrench"></i>
-                      <span>&nbsp;Products</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="order.html">
-                      <i class="fa fa-pencil-square-o"></i>
-                      <span>&nbsp;Orders</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="user.html">
-                      <i class="fa fa-users"></i>
-                      <span>&nbsp;Users</span>
-                    </a>
-                  </li>
+                  
                 </ul>
               </section>
               <!-- /.sidebar -->
@@ -127,6 +104,7 @@
           <script src="scripts/angular-route.js"></script>
           <script src="scripts/angular-animate.js"></script>             
           <script src="app/app.js"></script>
+          <script src="app/controllers/indexController.js"></script>          
           <script src="app/controllers/dashboardController.js"></script>
           <script src="app/controllers/categoriesController.js"></script>
           <script src="app/controllers/editCategoryController.js"></script>
