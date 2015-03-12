@@ -1,8 +1,31 @@
 (function () {
-	var app = angular.module('adminApp', ['ngRoute', 'ngAnimate']);
+	var app = angular.module('adminApp', ['ngRoute','ngAnimate', 'adminApp.services']);
 
-
-	app.config(function($routeProvider) {
+	app.directive('categoryrow', function() {
+		return {
+			restrict: "A",
+			templateUrl: 'app/views/categoryRow.html'
+		};
+	})
+	.directive('categorytable', function() {
+		return {
+			restrict: "E",
+			scope: {
+				sort: "&",
+				categories: "=info",
+				categoryFilter: "=filterName",
+				sortBy: "=sortBy"
+			},
+			templateUrl: 'app/views/categoryTable.html'
+		};
+	})
+	.directive('categories', function() {
+		return {
+			restrict: "E",
+			templateUrl: 'app/views/categories.html'
+		};
+	})
+	.config(function($routeProvider) {
 		console.log('routeProvider');
 		$routeProvider
 			.when('/', {
@@ -11,7 +34,7 @@
 			})
 			.when('/category', {
 				controller: 'CategoriesController',
-				templateUrl: 'app/views/categories.html'
+				templateUrl: 'app/userview/categoryList.html'
 			})
 			.when('/editCategory/:categoryId', {
 				controller: 'EditCategoryController',
@@ -20,7 +43,7 @@
 			.otherwise( {redirectTo: '/'});
 	})
 	.run(function($rootScope, $http) {
-		console.log('run');
+		console.log(window.location.href);
 		$http.get('../data/user.json').success(function (user) {
 			console.log('run success');
 			console.log(user);

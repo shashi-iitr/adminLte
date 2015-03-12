@@ -1,0 +1,10 @@
+            <table class="table table-hover">
+              <tr>
+                <th ng-click="sort({propName:id})">ID</th>
+                <th ng-click="sort({propName:name})">Name</th>
+                <th ng-click="sort({propName:link})">Link</th>
+                <th></th>
+              </tr>
+              <tr categoryrow ng-repeat="category in categories | filter:categoryFilter | orderBy:sortBy:reverse" class="repeat-animation" ng-cloak>
+              </tr>
+            </table>
